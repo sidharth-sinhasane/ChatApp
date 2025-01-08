@@ -1,0 +1,4 @@
+node_modules/
+dist/
+./client/chatclient/node_modules
+
