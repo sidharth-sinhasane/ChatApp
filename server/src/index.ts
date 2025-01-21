@@ -7,7 +7,7 @@ interface User {
 let socketCollection :User[]= [];
 
 wss.on("connection",(socket)=>{
-    socket.on("message",(message:string)=>{
+    socket.on("message",(message:string)=>{  
         const parsedMessage= JSON.parse(message);
         if(parsedMessage.type == "join"){
            socketCollection.push({
