@@ -14,7 +14,7 @@ wss.on("connection",(socket)=>{
             socket,
             room:parsedMessage.payload.roomId
         })
-            
+            console.log("someone join")
         }
         else{
             let currentRoomId:string= "";
@@ -30,7 +30,9 @@ wss.on("connection",(socket)=>{
 
             for(let i =0 ; i<socketCollection.length;i++){
                 if(socketCollection[i].room== currentRoomId){
-                    socketCollection[i].socket.send(parsedMessage.payload.message)
+                    if(socketCollection[i].socket != socket){
+                        socketCollection[i].socket.send(JSON.stringify(parsedMessage))
+                    }
                 }
             }
 
