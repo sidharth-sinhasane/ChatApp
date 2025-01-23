@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { MessageItem } from './components/messageItem';
+// import { MessageItem } from './components/messageItem';
 
 function App() {
   const [socket, setSocket] = useState<WebSocket | null>(null);
@@ -12,7 +12,7 @@ function App() {
   const messageInput = useRef<HTMLInputElement | null>(null);
 
   useEffect(() => {
-    const newSocket = new WebSocket('ws://localhost:3000');
+    const newSocket = new WebSocket('https://chatapp-backend-deb6.onrender.com');
 
     newSocket.onopen = () => setSocket(newSocket);
 
