@@ -68,7 +68,7 @@ function App() {
           <input
             ref={roomIdInput}
             type="text"
-            placeholder="Enter Room ID"
+            placeholder={currentRoom}
             className="flex-grow p-2 border border-gray-400 rounded-l-md bg-transparent text-white placeholder-gray-500"
           />
           <button
